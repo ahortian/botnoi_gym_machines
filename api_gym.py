@@ -6,6 +6,8 @@ import os
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
+do_debug = "apicharthortiangtham" in os.getcwd()
+
 # create Flask object
 application = Flask(__name__)
 application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -57,7 +59,8 @@ def upload_file():
 if __name__ == '__main__':
     # application.debug = False
     # application.run(host='0.0.0.0', port=8080)
-    application.run(debug=False)
+    # application.run(debug=False)
+    application.run(debug=do_debug)
 
 
 
